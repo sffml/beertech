@@ -13,3 +13,79 @@
     font-weight: 700;
     margin-top: 15px;
 }
+/* Основные стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Стили для страниц кейсов */
+.case-details {
+    padding: 60px 0;
+}
+
+.case-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.case-header h1 {
+    font-size: 36px;
+    color: #1a1a2e;
+}
+
+.case-subtitle {
+    font-size: 20px;
+    color: #f7b733;
+    font-weight: 700;
+}
+
+.case-content {
+    margin-bottom: 50px;
+}
+
+.case-content h2 {
+    color: #1a1a2e;
+    margin: 30px 0 20px;
+}
+
+.case-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.case-testimonial blockquote {
+    background: #f9f9f9;
+    border-left: 5px solid #f7b733;
+    padding: 20px;
+    font-style: italic;
+}
+
+.case-testimonial cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.case-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.btn-secondary {
+    background-color: #1a1a2e;
+    color: white;
+}
