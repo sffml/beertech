@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Технолог для пивоварни | Консультации и аудит</title>
+    <style>
+        /* Основные стили */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Шапка */
+        header {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 20px 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: #f7b733;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #f7b733;
+        }
+        
+        /* Герой */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://example.com/beer-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #f7b733;
+            color: #1a1a2e;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e6a422;
+            transform: translateY(-3px);
+        }
+        
+        /* Услуги */
+        .services {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: #1a1a2e;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .service-card h3 {
+            color: #1a1a2e;
+            margin-bottom: 15px;
+        }
+        
+        .service-card .price {
+            font-weight: 700;
+            color: #f7b733;
+            font-size: 20px;
+            margin: 15px 0;
+        }
+        
+        /* Обо мне */
+        .about {
+            background-color: #f1f1f1;
+            padding: 80px 0;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            color: #1a1a2e;
+            margin-bottom: 20px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        /* Контакты */
+        .contact {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        /* Подвал */
+        footer {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Пивовар<span>Тех</span></div>
+                <nav>
+                    <ul>
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="#about">Обо мне</a></li>
+                        <li><a href="#cases">Кейсы</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Герой -->
+    <section class="hero">
+        <div class="container">
+            <h1>Профессиональный технолог для вашей пивоварни</h1>
+            <p>30 лет опыта в оптимизации производства, контроле качества и разработке уникальных сортов пива</p>
+            <a href="#contact" class="btn">Бесплатная консультация</a>
+        </div>
+    </section>
+    
+    <!-- Услуги -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Мои услуги</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Удалённый контроль производства</h3>
+                    <p>Ежедневный мониторинг процессов через WhatsApp/Telegram, отчёты, оперативные решения проблем</p>
+                    <div class="price">от 15 000 руб./мес</div>
+                    <a href="#contact" class="btn">Заказать</a>
+                </div>
+                <div class="service-card">
+                    <h3>Выездной аудит</h3>
+                    <p>Проверка оборудования, микробиологический контроль, обучение персонала на месте</p>
+                    <div class="price">от 30 000 руб.</div>
+                    <a href="#contact" class="btn">Заказать</a>
+                </div>
+                <div class="service-card">
+                    <h3>Разработка нового сорта</h3>
+                    <p>Создание уникального пива под ваше оборудование, включая документы для регистрации</p>
+                    <div class="price">от 50 000 руб.</div>
+                    <a href="#contact" class="btn">Заказать</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Обо мне -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Обо мне</h2>
+                    <p>Я - технолог-пивовар с 30-летним стажем работы на производствах разного масштаба: от мини-пивоварен до крупных заводов.</p>
+                    <p>Помог более 50 пивоварням в России и СНГ:</p>
+                    <ul>
+                        <li>Снизить процент брака с 20% до 3%</li>
+                        <li>Увеличить прибыль за счёт оптимизации процессов</li>
+                        <li>Разработать хитовые сорта, которые хорошо продаются</li>
+                    </ul>
+                    <p>Моя цель - помочь малому бизнесу варить качественное пиво без лишних затрат.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://example.com/technologist.jpg" alt="Технолог-пивовар">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Кейсы -->
+    <section class="cases" id="cases">
+        <div class="container">
+            <div class="section-title">
+                <h2>Реальные кейсы</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Пивоварня "Хмельной Урал"</h3>
+                    <p>Проблема: нестабильное качество, жалобы клиентов</p>
+                    <p>Решение: аудит + обучение персонала</p>
+                    <p>Результат: брак снижен с 25% до 4% за 2 месяца</p>
+                </div>
+                <div class="service-card">
+                    <h3>Крафтовая пивоварня "HopHead"</h3>
+                    <p>Проблема: слабые продажи стандартных сортов</p>
+                    <p>Решение: разработка линейки NEIPA</p>
+                    <p>Результат: +40% к выручке за 3 месяца</p>
+                </div>
+                <div class="service-card">
+                    <h3>Микропивоварня "Бочонок"</h3>
+                    <p>Проблема: высокие затраты на производство</p>
+                    <p>Решение: оптимизация рецептур и процессов</p>
+                    <p>Результат: экономия 120 000 руб./мес</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Контакты -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Свяжитесь со мной</h2>
+                <p>Заполните форму, и я отвечу в течение 24 часов</p>
+            </div>
+            <div class="contact-form">
+                <form action="https://formspree.io/f/your-form-id" method="POST">
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Интересующая услуга</label>
+                        <select id="service" name="service">
+                            <option value="remote">Удалённый контроль</option>
+                            <option value="audit">Выездной аудит</option>
+                            <option value="new-beer">Разработка сорта</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Сообщение</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="logo">Пивовар<span>Тех</span></div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-vk"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>© 2023 Технологический консалтинг для пивоварен. Все права защищены.</p>
+        </div>
+    </footer>
+    
+    <!-- Font Awesome для иконок -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
