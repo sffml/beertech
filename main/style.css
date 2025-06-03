@@ -1,0 +1,15 @@
+.case-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.case-card:hover {
+    background-color: #f0f0f0;
+}
+
+.case-link {
+    color: #f7b733;
+    font-weight: 700;
+    margin-top: 15px;
+}
